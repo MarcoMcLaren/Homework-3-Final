@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -23,6 +24,7 @@
                     <li>@Html.ActionLink("File", "Index", "FileDownload")</li>
                     <li>@Html.ActionLink("Image", "Index", "ImageDownload")</li>
                     <li>@Html.ActionLink("Video", "Index", "VideoDownload")</li>
+                    <li>@Html.ActionLink("About Me", "Index", "AboutMe")</li>
                 </ul>
             </div>
         </div>

@@ -10,9 +10,32 @@
     @model IEnumerable<FileUploadDownload.Models.FileModel>
     Generated List details
 *@
+<head>
+    <style type="text/css">
+        .auto-style {
+            color: #FFFFFF;
+        }
+
+        .t {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #download {
+            background-color: forestgreen;
+            color: white;
+        }
+
+        #delete {
+            background-color: palevioletred;
+            color: white;
+        }
+    </style>
+</head>
 @{
     ViewBag.Title = "Video Downloader";
 }
+
 <h3>@ViewBag.Title</h3>
 @foreach (FileModel file in Model)
 {
@@ -24,9 +47,11 @@
                     <source src="@Url.Content("~/Media/Videos/")@file.FileName" type="video/mp4">
                     Error Cannot Be Played
                 </video>
+                <br />
                 <button id="download">
                     @Html.ActionLink("Download", "DownloadFile",
-                     new { fileName = file.FileName })
+                     new { fileName = file.FileName },
+                    new {style= "color: white;" })
                 </button>
                 <button id="delete">
                     @Html.ActionLink("DELETE", "DeleteFile",
