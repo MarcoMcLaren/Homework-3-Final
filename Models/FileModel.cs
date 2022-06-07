@@ -1,6 +1,4 @@
-﻿//Ensure that CodeLens is activated
-//Select >> Tools >> Options >> Text Editor >> All Languages >> CodeLens
-
+﻿
 using System.ComponentModel.DataAnnotations; //Add for look and feel
 using System.Web;
 

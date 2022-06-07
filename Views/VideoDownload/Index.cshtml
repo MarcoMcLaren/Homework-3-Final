@@ -1,15 +1,9 @@
-﻿@*
-    REMEMBER the using of Models
-*@
+﻿
 
 @using FileUploading.Models
 @model List<FileModel>
 
-@*
 
-    @model IEnumerable<FileUploadDownload.Models.FileModel>
-    Generated List details
-*@
 <head>
     <style type="text/css">
         .auto-style {
@@ -39,35 +33,31 @@
 <h3>@ViewBag.Title</h3>
 @foreach (FileModel file in Model)
 {
-
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <video width="320" height="240" controls>
-                    <source src="@Url.Content("~/Media/Videos/")@file.FileName" type="video/mp4">
-                    Error Cannot Be Played
-                </video>
+<div class="gallery">
+    <div class="col-sm-4">
+        <div class="card">
+            <video width="320" height="240" controls>
+                <source src="@Url.Content("~/Media/Videos/")@file.FileName" type="video/mp4">
+            </video><br />
+            @file.FileName
+            <div class="card-body">
                 <br />
                 <button id="download">
                     @Html.ActionLink("Download", "DownloadFile",
                      new { fileName = file.FileName },
-                    new {style= "color: white;" })
+                     new { style = "color: white;" })
                 </button>
                 <button id="delete">
                     @Html.ActionLink("DELETE", "DeleteFile",
                    new { fileName = file.FileName },
                    new { onclick = "return confirm('Are you sure you wish to delete this?');" })
                 </button>
-
+                <br />
             </div>
         </div>
     </div>
+</div>
+
 }
-<system.webServer>
-    <security>
-        <requestFiltering>
-            <requestLimits maxAllowedContentLength="1073741824" />
-        </requestFiltering>
-    </security>
-</system.webServer>
+
 
