@@ -12,7 +12,7 @@ namespace FileUploading.Controllers
         {
             //Fetch all files in the Folder (Directory).
 
-            string[] filePaths = Directory.GetFiles(Server.MapPath("~/Media/Documents/"));
+            string[] filePaths = Directory.GetFiles(Server.MapPath("~/Media/Documents/")); //retrieving data and storing in array
 
             //Copy File names to Model collection.
             //The return below returns to the list here.
@@ -26,8 +26,7 @@ namespace FileUploading.Controllers
             return View(files);
         }
 
-        public FileResult DownloadFile(string fileName) // Why fileName and not FileName????
-                                                        // Because of using.
+        public FileResult DownloadFile(string fileName) 
         {
             //Build the File Path.
 
